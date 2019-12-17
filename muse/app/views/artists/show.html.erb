@@ -1,0 +1,13 @@
+<h1><img src=<%=@artist.img%> height="100" width="100"></h1>
+<h1><%= @artist.name %></h1>
+<h1><%= @artist.hometown %></h1>
+<h1><%= @artist.albums %></h1>
+<% @songs.each do |song|%>
+    <strong><u>Title:</u> <%= song.title%></strong><br>
+    <i><u>Song:</u> <%= song.genre%></i><br>
+    <%= link_to 'Delete Song', deletesong_path(@artist, song),method: :delete %><hr>
+<%end%>
+<%= link_to 'Edit', edit_artist_path(@artist) %> 
+<%= link_to 'Delete', artist_path(@artist), method: :delete%>
+<%= link_to 'New Songs', new_song_path(@artist) %>
+<%= link_to 'Home', artisthome_path %>

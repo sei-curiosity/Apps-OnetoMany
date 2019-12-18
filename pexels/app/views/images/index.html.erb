@@ -1,0 +1,4 @@
+<%= link_to "Add image", new_user_image_path(@user)%>
+<% @images.each do |image|%>
+    <%= link_to image.url, user_image_path(@user, image) %>
+<% end %>
